@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BF65CAA16B1EE6C009E2021 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF65CA916B1EE6C009E2021 /* UIKit.framework */; };
+		7BF65CAC16B1EE6C009E2021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF65CAB16B1EE6C009E2021 /* Foundation.framework */; };
+		7BF65CAE16B1EE6C009E2021 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF65CAD16B1EE6C009E2021 /* CoreGraphics.framework */; };
+		7BF65CB416B1EE6C009E2021 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CB216B1EE6C009E2021 /* InfoPlist.strings */; };
+		7BF65CB616B1EE6C009E2021 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CB516B1EE6C009E2021 /* main.m */; };
+		7BF65CBA16B1EE6C009E2021 /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CB916B1EE6C009E2021 /* AKAppDelegate.m */; };
+		7BF65CBC16B1EE6C009E2021 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CBB16B1EE6C009E2021 /* Default.png */; };
+		7BF65CBE16B1EE6C009E2021 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CBD16B1EE6C009E2021 /* Default@2x.png */; };
+		7BF65CC016B1EE6C009E2021 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CBF16B1EE6C009E2021 /* Default-568h@2x.png */; };
+		7BF65CCA16B1EECF009E2021 /* AKSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CC916B1EECF009E2021 /* AKSegmentedControl.m */; };
+		7BF65CDD16B1EF13009E2021 /* segmented-bg-pressed-center.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CCD16B1EF13009E2021 /* segmented-bg-pressed-center.png */; };
+		7BF65CDE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CCE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png */; };
+		7BF65CDF16B1EF13009E2021 /* segmented-bg-pressed-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CCF16B1EF13009E2021 /* segmented-bg-pressed-left.png */; };
+		7BF65CE016B1EF13009E2021 /* segmented-bg-pressed-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD016B1EF13009E2021 /* segmented-bg-pressed-left@2x.png */; };
+		7BF65CE116B1EF13009E2021 /* segmented-bg-pressed-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD116B1EF13009E2021 /* segmented-bg-pressed-right.png */; };
+		7BF65CE216B1EF13009E2021 /* segmented-bg-pressed-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD216B1EF13009E2021 /* segmented-bg-pressed-right@2x.png */; };
+		7BF65CE316B1EF13009E2021 /* segmented-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD316B1EF13009E2021 /* segmented-bg.png */; };
+		7BF65CE416B1EF13009E2021 /* segmented-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD416B1EF13009E2021 /* segmented-bg@2x.png */; };
+		7BF65CE516B1EF13009E2021 /* segmented-separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD516B1EF13009E2021 /* segmented-separator.png */; };
+		7BF65CE616B1EF13009E2021 /* segmented-separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD616B1EF13009E2021 /* segmented-separator@2x.png */; };
+		7BF65CE716B1EF13009E2021 /* settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD716B1EF13009E2021 /* settings-icon.png */; };
+		7BF65CE816B1EF13009E2021 /* settings-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD816B1EF13009E2021 /* settings-icon@2x.png */; };
+		7BF65CE916B1EF13009E2021 /* social-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CD916B1EF13009E2021 /* social-icon.png */; };
+		7BF65CEA16B1EF13009E2021 /* social-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CDA16B1EF13009E2021 /* social-icon@2x.png */; };
+		7BF65CEB16B1EF13009E2021 /* star-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CDB16B1EF13009E2021 /* star-icon.png */; };
+		7BF65CEC16B1EF13009E2021 /* star-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CDC16B1EF13009E2021 /* star-icon@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7BF65CA516B1EE6C009E2021 /* AKSegmentedControl Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AKSegmentedControl Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF65CA916B1EE6C009E2021 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7BF65CAB16B1EE6C009E2021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7BF65CAD16B1EE6C009E2021 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7BF65CB116B1EE6C009E2021 /* AKSegmentedControl Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKSegmentedControl Example-Info.plist"; sourceTree = "<group>"; };
+		7BF65CB316B1EE6C009E2021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7BF65CB516B1EE6C009E2021 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7BF65CB716B1EE6C009E2021 /* AKSegmentedControl Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKSegmentedControl Example-Prefix.pch"; sourceTree = "<group>"; };
+		7BF65CB816B1EE6C009E2021 /* AKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
+		7BF65CB916B1EE6C009E2021 /* AKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
+		7BF65CBB16B1EE6C009E2021 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7BF65CBD16B1EE6C009E2021 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7BF65CBF16B1EE6C009E2021 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7BF65CC816B1EECF009E2021 /* AKSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKSegmentedControl.h; sourceTree = "<group>"; };
+		7BF65CC916B1EECF009E2021 /* AKSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKSegmentedControl.m; sourceTree = "<group>"; };
+		7BF65CCD16B1EF13009E2021 /* segmented-bg-pressed-center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-center.png"; sourceTree = "<group>"; };
+		7BF65CCE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-center@2x.png"; sourceTree = "<group>"; };
+		7BF65CCF16B1EF13009E2021 /* segmented-bg-pressed-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-left.png"; sourceTree = "<group>"; };
+		7BF65CD016B1EF13009E2021 /* segmented-bg-pressed-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-left@2x.png"; sourceTree = "<group>"; };
+		7BF65CD116B1EF13009E2021 /* segmented-bg-pressed-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-right.png"; sourceTree = "<group>"; };
+		7BF65CD216B1EF13009E2021 /* segmented-bg-pressed-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-right@2x.png"; sourceTree = "<group>"; };
+		7BF65CD316B1EF13009E2021 /* segmented-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg.png"; sourceTree = "<group>"; };
+		7BF65CD416B1EF13009E2021 /* segmented-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg@2x.png"; sourceTree = "<group>"; };
+		7BF65CD516B1EF13009E2021 /* segmented-separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-separator.png"; sourceTree = "<group>"; };
+		7BF65CD616B1EF13009E2021 /* segmented-separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-separator@2x.png"; sourceTree = "<group>"; };
+		7BF65CD716B1EF13009E2021 /* settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon.png"; sourceTree = "<group>"; };
+		7BF65CD816B1EF13009E2021 /* settings-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon@2x.png"; sourceTree = "<group>"; };
+		7BF65CD916B1EF13009E2021 /* social-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social-icon.png"; sourceTree = "<group>"; };
+		7BF65CDA16B1EF13009E2021 /* social-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social-icon@2x.png"; sourceTree = "<group>"; };
+		7BF65CDB16B1EF13009E2021 /* star-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon.png"; sourceTree = "<group>"; };
+		7BF65CDC16B1EF13009E2021 /* star-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BF65CA216B1EE6C009E2021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF65CAA16B1EE6C009E2021 /* UIKit.framework in Frameworks */,
+				7BF65CAC16B1EE6C009E2021 /* Foundation.framework in Frameworks */,
+				7BF65CAE16B1EE6C009E2021 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BF65C9A16B1EE6C009E2021 = {
+			isa = PBXGroup;
+			children = (
+				7BF65CAF16B1EE6C009E2021 /* AKSegmentedControl Example */,
+				7BF65CA816B1EE6C009E2021 /* Frameworks */,
+				7BF65CA616B1EE6C009E2021 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7BF65CA616B1EE6C009E2021 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CA516B1EE6C009E2021 /* AKSegmentedControl Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BF65CA816B1EE6C009E2021 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CA916B1EE6C009E2021 /* UIKit.framework */,
+				7BF65CAB16B1EE6C009E2021 /* Foundation.framework */,
+				7BF65CAD16B1EE6C009E2021 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BF65CAF16B1EE6C009E2021 /* AKSegmentedControl Example */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CB816B1EE6C009E2021 /* AKAppDelegate.h */,
+				7BF65CB916B1EE6C009E2021 /* AKAppDelegate.m */,
+				7BF65CC616B1EEC3009E2021 /* Vendor */,
+				7BF65CCB16B1EF02009E2021 /* Ressources */,
+				7BF65CB016B1EE6C009E2021 /* Supporting Files */,
+			);
+			path = "AKSegmentedControl Example";
+			sourceTree = "<group>";
+		};
+		7BF65CB016B1EE6C009E2021 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CB116B1EE6C009E2021 /* AKSegmentedControl Example-Info.plist */,
+				7BF65CB216B1EE6C009E2021 /* InfoPlist.strings */,
+				7BF65CB516B1EE6C009E2021 /* main.m */,
+				7BF65CB716B1EE6C009E2021 /* AKSegmentedControl Example-Prefix.pch */,
+				7BF65CBB16B1EE6C009E2021 /* Default.png */,
+				7BF65CBD16B1EE6C009E2021 /* Default@2x.png */,
+				7BF65CBF16B1EE6C009E2021 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7BF65CC616B1EEC3009E2021 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CC716B1EECF009E2021 /* ASegmentedControl */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		7BF65CC716B1EECF009E2021 /* ASegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CC816B1EECF009E2021 /* AKSegmentedControl.h */,
+				7BF65CC916B1EECF009E2021 /* AKSegmentedControl.m */,
+			);
+			name = ASegmentedControl;
+			path = ../../ASegmentedControl;
+			sourceTree = "<group>";
+		};
+		7BF65CCB16B1EF02009E2021 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CCC16B1EF13009E2021 /* images */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		7BF65CCC16B1EF13009E2021 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7BF65CCD16B1EF13009E2021 /* segmented-bg-pressed-center.png */,
+				7BF65CCE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png */,
+				7BF65CCF16B1EF13009E2021 /* segmented-bg-pressed-left.png */,
+				7BF65CD016B1EF13009E2021 /* segmented-bg-pressed-left@2x.png */,
+				7BF65CD116B1EF13009E2021 /* segmented-bg-pressed-right.png */,
+				7BF65CD216B1EF13009E2021 /* segmented-bg-pressed-right@2x.png */,
+				7BF65CD316B1EF13009E2021 /* segmented-bg.png */,
+				7BF65CD416B1EF13009E2021 /* segmented-bg@2x.png */,
+				7BF65CD516B1EF13009E2021 /* segmented-separator.png */,
+				7BF65CD616B1EF13009E2021 /* segmented-separator@2x.png */,
+				7BF65CD716B1EF13009E2021 /* settings-icon.png */,
+				7BF65CD816B1EF13009E2021 /* settings-icon@2x.png */,
+				7BF65CD916B1EF13009E2021 /* social-icon.png */,
+				7BF65CDA16B1EF13009E2021 /* social-icon@2x.png */,
+				7BF65CDB16B1EF13009E2021 /* star-icon.png */,
+				7BF65CDC16B1EF13009E2021 /* star-icon@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BF65CA416B1EE6C009E2021 /* AKSegmentedControl Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BF65CC316B1EE6C009E2021 /* Build configuration list for PBXNativeTarget "AKSegmentedControl Example" */;
+			buildPhases = (
+				7BF65CA116B1EE6C009E2021 /* Sources */,
+				7BF65CA216B1EE6C009E2021 /* Frameworks */,
+				7BF65CA316B1EE6C009E2021 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AKSegmentedControl Example";
+			productName = "AKSegmentedControl Example";
+			productReference = 7BF65CA516B1EE6C009E2021 /* AKSegmentedControl Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BF65C9C16B1EE6C009E2021 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AK;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Ali Karagoz";
+			};
+			buildConfigurationList = 7BF65C9F16B1EE6C009E2021 /* Build configuration list for PBXProject "AKSegmentedControl Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7BF65C9A16B1EE6C009E2021;
+			productRefGroup = 7BF65CA616B1EE6C009E2021 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BF65CA416B1EE6C009E2021 /* AKSegmentedControl Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7BF65CA316B1EE6C009E2021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF65CB416B1EE6C009E2021 /* InfoPlist.strings in Resources */,
+				7BF65CBC16B1EE6C009E2021 /* Default.png in Resources */,
+				7BF65CBE16B1EE6C009E2021 /* Default@2x.png in Resources */,
+				7BF65CC016B1EE6C009E2021 /* Default-568h@2x.png in Resources */,
+				7BF65CDD16B1EF13009E2021 /* segmented-bg-pressed-center.png in Resources */,
+				7BF65CDE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png in Resources */,
+				7BF65CDF16B1EF13009E2021 /* segmented-bg-pressed-left.png in Resources */,
+				7BF65CE016B1EF13009E2021 /* segmented-bg-pressed-left@2x.png in Resources */,
+				7BF65CE116B1EF13009E2021 /* segmented-bg-pressed-right.png in Resources */,
+				7BF65CE216B1EF13009E2021 /* segmented-bg-pressed-right@2x.png in Resources */,
+				7BF65CE316B1EF13009E2021 /* segmented-bg.png in Resources */,
+				7BF65CE416B1EF13009E2021 /* segmented-bg@2x.png in Resources */,
+				7BF65CE516B1EF13009E2021 /* segmented-separator.png in Resources */,
+				7BF65CE616B1EF13009E2021 /* segmented-separator@2x.png in Resources */,
+				7BF65CE716B1EF13009E2021 /* settings-icon.png in Resources */,
+				7BF65CE816B1EF13009E2021 /* settings-icon@2x.png in Resources */,
+				7BF65CE916B1EF13009E2021 /* social-icon.png in Resources */,
+				7BF65CEA16B1EF13009E2021 /* social-icon@2x.png in Resources */,
+				7BF65CEB16B1EF13009E2021 /* star-icon.png in Resources */,
+				7BF65CEC16B1EF13009E2021 /* star-icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BF65CA116B1EE6C009E2021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF65CB616B1EE6C009E2021 /* main.m in Sources */,
+				7BF65CBA16B1EE6C009E2021 /* AKAppDelegate.m in Sources */,
+				7BF65CCA16B1EECF009E2021 /* AKSegmentedControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7BF65CB216B1EE6C009E2021 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BF65CB316B1EE6C009E2021 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7BF65CC116B1EE6C009E2021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7BF65CC216B1EE6C009E2021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7BF65CC416B1EE6C009E2021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AKSegmentedControl Example/AKSegmentedControl Example-Prefix.pch";
+				INFOPLIST_FILE = "AKSegmentedControl Example/AKSegmentedControl Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7BF65CC516B1EE6C009E2021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AKSegmentedControl Example/AKSegmentedControl Example-Prefix.pch";
+				INFOPLIST_FILE = "AKSegmentedControl Example/AKSegmentedControl Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BF65C9F16B1EE6C009E2021 /* Build configuration list for PBXProject "AKSegmentedControl Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BF65CC116B1EE6C009E2021 /* Debug */,
+				7BF65CC216B1EE6C009E2021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BF65CC316B1EE6C009E2021 /* Build configuration list for PBXNativeTarget "AKSegmentedControl Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BF65CC416B1EE6C009E2021 /* Debug */,
+				7BF65CC516B1EE6C009E2021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BF65C9C16B1EE6C009E2021 /* Project object */;
+}
