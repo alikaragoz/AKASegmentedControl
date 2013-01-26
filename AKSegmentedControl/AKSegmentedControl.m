@@ -22,7 +22,6 @@
 // THE SOFTWARE.
 
 #import "AKSegmentedControl.h"
-#import <QuartzCore/QuartzCore.h>
 
 #define kAKButtonSeparatorWidth 1.0
 
