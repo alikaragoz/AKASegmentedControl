@@ -139,19 +139,19 @@
 		7BF65CC616B1EEC3009E2021 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				7BF65CC716B1EECF009E2021 /* ASegmentedControl */,
+				7BF65CC716B1EECF009E2021 /* AKSegmentedControl */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
 		};
-		7BF65CC716B1EECF009E2021 /* ASegmentedControl */ = {
+		7BF65CC716B1EECF009E2021 /* AKSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
 				7BF65CC816B1EECF009E2021 /* AKSegmentedControl.h */,
 				7BF65CC916B1EECF009E2021 /* AKSegmentedControl.m */,
 			);
-			name = ASegmentedControl;
-			path = ../../ASegmentedControl;
+			name = AKSegmentedControl;
+			path = ../../AKSegmentedControl;
 			sourceTree = "<group>";
 		};
 		7BF65CCB16B1EF02009E2021 /* Ressources */ = {
@@ -380,6 +380,7 @@
 				7BF65CC516B1EE6C009E2021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
