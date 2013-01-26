@@ -24,7 +24,7 @@
 #import "AKSegmentedControl.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define kAFButtonSeparatorWidth 1.0
+#define kAKButtonSeparatorWidth 1.0
 
 @interface AKSegmentedControl ()
 
@@ -83,7 +83,7 @@
     NSUInteger separtorsNumber = buttonsCount - 1;
     
     // calculating the button prperties
-    CGFloat separatorWidth = (_separatorImage != nil) ? _separatorImage.size.width : kAFButtonSeparatorWidth;
+    CGFloat separatorWidth = (_separatorImage != nil) ? _separatorImage.size.width : kAKButtonSeparatorWidth;
     CGFloat buttonWidth = floorf((CGRectGetWidth(contentRect) - (separtorsNumber * separatorWidth)) / buttonsCount);
     CGFloat buttonHeight = CGRectGetHeight(contentRect);
     CGSize buttonSize = CGSizeMake(buttonWidth, buttonHeight);
