@@ -35,30 +35,13 @@ typedef enum : NSUInteger
 
 @interface AKSegmentedControl : UIControl
 
-/**
- */
 @property (nonatomic, strong) NSArray *buttonsArray;
-
-/**
- */
 @property (nonatomic, strong) UIImage *backgroundImage;
-
-/**
- */
 @property (nonatomic, strong) UIImage *separatorImage;
-
-/**
- */
 @property (nonatomic, assign) UIEdgeInsets contentEdgeInsets;
-
-/**
- */
+@property (nonatomic, assign) AKSegmentedControlMode segmentedControlMode;
 @property (nonatomic, strong, readonly) NSIndexSet *selectedIndeces;
 
 - (void)selectItemsWithIndexSet:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection;
-
-/**
- */
-@property (nonatomic, assign) AKSegmentedControlMode segmentedControlMode;
 
 @end
