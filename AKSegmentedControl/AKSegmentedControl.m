@@ -120,13 +120,30 @@
     
     NSUInteger selectedIndex = button.tag;
     
+    NSIndexSet *set = self.selectedIndeces;
     if (self.segmentedControlMode == AKSegmentedControlModeMultipleSelectionable) {
-        [self selectItemsWithIndexSet:[NSIndexSet indexSetWithIndex:selectedIndex] byExpandingSelection:YES];
+        NSMutableIndexSet *mutableSet = [set mutableCopy];
+        if ([self.selectedIndeces containsIndex:selectedIndex]) {
+            [mutableSet removeIndex:selectedIndex];
+        } else {
+            [mutableSet addIndex:selectedIndex];
+        }
+        set = [mutableSet copy];
     } else {
-        [self selectItemsWithIndexSet:[NSIndexSet indexSetWithIndex:selectedIndex] byExpandingSelection:NO];
+        set = [NSIndexSet indexSetWithIndex:selectedIndex];
     }
     
-    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    BOOL willSendAction = ![self.selectedIndeces isEqualToIndexSet:set];
+    
+    [self selectItemsWithIndexSet:set byExpandingSelection:NO];
+    
+    if (willSendAction) {
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+    
+    if (self.segmentedControlMode == AKSegmentedControlModeButton) {
+        [self selectItemsWithIndexSet:[NSIndexSet indexSet] byExpandingSelection:NO];
+    }
 }
 
 #pragma mark - Setters

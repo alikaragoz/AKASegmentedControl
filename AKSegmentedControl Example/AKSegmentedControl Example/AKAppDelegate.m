@@ -54,7 +54,7 @@
     // Segmented Control #3
     UILabel *segmentedControl3Label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl2.frame) + 20.0, 300.0, 20.0)];
     [segmentedControl3Label setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    [segmentedControl3Label setText:@"Icon + Text"];
+    [segmentedControl3Label setText:@"Icon + Text + Multiple selection"];
     [segmentedControl3Label setTextAlignment:NSTextAlignmentCenter];
     [segmentedControl3Label setBackgroundColor:[UIColor clearColor]];
     [segmentedControl3Label setTextColor:[UIColor colorWithRed:82.0/255.0 green:113.0/255.0 blue:131.0/255.0 alpha:1.0]];
