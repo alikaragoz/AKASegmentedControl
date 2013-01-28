@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AKSegmentedControl.h"
 
-@interface AKAppDelegate : UIResponder <UIApplicationDelegate, AKSegmentedControlDelegate>
+@interface AKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

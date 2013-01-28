@@ -34,7 +34,7 @@
     
     [viewController.view addSubview:segmentedControl1Label];
     segmentedControl1 = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl1Label.frame) + 10.0, 300.0, 37.0)];
-    [segmentedControl1 setDelegate:self];
+    [segmentedControl1 addTarget:self action:@selector(segmentedViewController:) forControlEvents:UIControlEventValueChanged];
     
     // Segmented Control #2
     UILabel *segmentedControl2Label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl1.frame) + 20.0, 300.0, 20.0)];
@@ -49,7 +49,7 @@
     
     [viewController.view addSubview:segmentedControl2Label];
     segmentedControl2 = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl2Label.frame) + 10.0, 300.0, 37.0)];
-    [segmentedControl2 setDelegate:self];
+    [segmentedControl2 addTarget:self action:@selector(segmentedViewController:) forControlEvents:UIControlEventValueChanged];
     
     // Segmented Control #3
     UILabel *segmentedControl3Label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl2.frame) + 20.0, 300.0, 20.0)];
@@ -64,7 +64,8 @@
     
     [viewController.view addSubview:segmentedControl3Label];
     segmentedControl3 = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl3Label.frame) + 10.0, 300.0, 37.0)];
-    [segmentedControl3 setDelegate:self];
+    [segmentedControl3 addTarget:self action:@selector(segmentedViewController:) forControlEvents:UIControlEventValueChanged];
+    segmentedControl3.segmentedControlMode = AKSegmentedControlModeMultipleSelectionable;
     
     [self.window setRootViewController:viewController];
     self.window.backgroundColor = [UIColor colorWithRed:235.0/255.0 green:240.0/255.0 blue:243.0/255.0 alpha:1.0];
@@ -303,14 +304,14 @@
 #pragma mark -
 #pragma mark AKSegmentedControlDelegate
 
-- (void)segmentedViewController:(AKSegmentedControl *)segmentedControl touchedAtIndex:(NSUInteger)index
+- (void)segmentedViewController:(AKSegmentedControl *)segmentedControl
 {
     if (segmentedControl == segmentedControl1)
-        NSLog(@"SegmentedControl #1 : Selected Index %d", index);
+        NSLog(@"SegmentedControl #1 : Selected Index %@", segmentedControl.selectedIndeces);
     else if (segmentedControl == segmentedControl2)
-        NSLog(@"SegmentedControl #2 : Selected Index %d", index);
+        NSLog(@"SegmentedControl #2 : Selected Index %@", segmentedControl.selectedIndeces);
     else if (segmentedControl == segmentedControl3)
-        NSLog(@"SegmentedControl #3 : Selected Index %d", index);
+        NSLog(@"SegmentedControl #3 : Selected Index %@", segmentedControl.selectedIndeces);
 }
 
 @end

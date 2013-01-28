@@ -116,7 +116,7 @@
 				7BF65CB816B1EE6C009E2021 /* AKAppDelegate.h */,
 				7BF65CB916B1EE6C009E2021 /* AKAppDelegate.m */,
 				7BF65CC616B1EEC3009E2021 /* Vendor */,
-				7BF65CCB16B1EF02009E2021 /* Ressources */,
+				7BF65CCB16B1EF02009E2021 /* Resources */,
 				7BF65CB016B1EE6C009E2021 /* Supporting Files */,
 			);
 			path = "AKSegmentedControl Example";
@@ -154,12 +154,12 @@
 			path = ../../AKSegmentedControl;
 			sourceTree = "<group>";
 		};
-		7BF65CCB16B1EF02009E2021 /* Ressources */ = {
+		7BF65CCB16B1EF02009E2021 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				7BF65CCC16B1EF13009E2021 /* images */,
 			);
-			name = Ressources;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7BF65CCC16B1EF13009E2021 /* images */ = {
