@@ -38,10 +38,11 @@ typedef enum : NSUInteger
 @property (nonatomic, strong) NSArray *buttonsArray;
 @property (nonatomic, strong) UIImage *backgroundImage;
 @property (nonatomic, strong) UIImage *separatorImage;
+@property (nonatomic, strong) NSIndexSet *selectedIndexes;
 @property (nonatomic, assign) UIEdgeInsets contentEdgeInsets;
 @property (nonatomic, assign) AKSegmentedControlMode segmentedControlMode;
-@property (nonatomic, strong, readonly) NSIndexSet *selectedIndeces;
 
-- (void)selectItemsWithIndexSet:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection;
+- (void)setSelectedIndex:(NSUInteger)index;
+- (void)setSelectedIndexes:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection;
 
 @end

@@ -27,13 +27,14 @@
 
 @interface AKSegmentedControl ()
 
-@property (nonatomic, strong) NSMutableArray *separatorsArray;
-@property (nonatomic, strong) NSMutableIndexSet *mutableIndexSet;
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 
 @end
 
 @implementation AKSegmentedControl
+{
+    NSMutableArray *separatorsArray;
+}
 
 #pragma mark - Init and Dealloc
 
@@ -42,12 +43,11 @@
     self = [super initWithFrame:frame];
     if (!self) return nil;
     
-    _mutableIndexSet = [[NSMutableIndexSet alloc] init];
-    _separatorsArray = [NSMutableArray array];
-    
-    _contentEdgeInsets = UIEdgeInsetsZero;
-    _segmentedControlMode = AKSegmentedControlModeSticky;
-    _buttonsArray = [[NSArray alloc] init];
+    separatorsArray = [NSMutableArray array];
+    self.selectedIndexes = [NSIndexSet indexSet];
+    self.contentEdgeInsets = UIEdgeInsetsZero;
+    self.segmentedControlMode = AKSegmentedControlModeSticky;
+    self.buttonsArray = [[NSArray alloc] init];
     
     [self addSubview:self.backgroundImageView];
     
@@ -58,12 +58,12 @@
 
 - (void)layoutSubviews
 {
-    CGRect contentRect = UIEdgeInsetsInsetRect(self.bounds, self.contentEdgeInsets);
+    CGRect contentRect = UIEdgeInsetsInsetRect(self.bounds, _contentEdgeInsets);
     
-    NSUInteger buttonsCount = self.buttonsArray.count;
+    NSUInteger buttonsCount = _buttonsArray.count;
     NSUInteger separtorsNumber = buttonsCount - 1;
     
-    CGFloat separatorWidth = (self.separatorImage != nil) ? self.separatorImage.size.width : kAKButtonSeparatorWidth;
+    CGFloat separatorWidth = (_separatorImage != nil) ? _separatorImage.size.width : kAKButtonSeparatorWidth;
     CGFloat buttonWidth = floorf((CGRectGetWidth(contentRect) - (separtorsNumber * separatorWidth)) / buttonsCount);
     CGFloat buttonHeight = CGRectGetHeight(contentRect);
     CGSize buttonSize = CGSizeMake(buttonWidth, buttonHeight);
@@ -76,7 +76,7 @@
     
     NSUInteger increment = 0;
     
-    for (UIButton *button in self.buttonsArray)
+    for (UIButton *button in _buttonsArray)
     {
         dButtonWidth = buttonSize.width;
         
@@ -92,11 +92,11 @@
         
         if (increment < separtorsNumber)
         {
-            UIImageView *separatorImageView = self.separatorsArray[increment];
+            UIImageView *separatorImageView = separatorsArray[increment];
             [separatorImageView setFrame:CGRectMake(CGRectGetMaxX(button.frame),
                                                     offsetY,
                                                     separatorWidth,
-                                                    CGRectGetHeight(self.bounds) - self.contentEdgeInsets.top - self.contentEdgeInsets.bottom)];
+                                                    CGRectGetHeight(self.bounds) - _contentEdgeInsets.top - _contentEdgeInsets.bottom)];
         }
         
         increment++;
@@ -114,48 +114,43 @@
     
     NSUInteger selectedIndex = button.tag;
     
-    NSIndexSet *set = self.selectedIndeces;
-    if (self.segmentedControlMode == AKSegmentedControlModeMultipleSelectionable) {
+    NSIndexSet *set = _selectedIndexes;
+    
+    if (_segmentedControlMode == AKSegmentedControlModeMultipleSelectionable)
+    {
         NSMutableIndexSet *mutableSet = [set mutableCopy];
-        if ([self.selectedIndeces containsIndex:selectedIndex]) {
+        
+        if ([_selectedIndexes containsIndex:selectedIndex])
             [mutableSet removeIndex:selectedIndex];
-        } else {
+        else
             [mutableSet addIndex:selectedIndex];
-        }
-        set = [mutableSet copy];
-    } else {
-        set = [NSIndexSet indexSetWithIndex:selectedIndex];
+        
+        [self setSelectedIndexes:[mutableSet copy]];
+    }
+    else
+    {
+        [self setSelectedIndex:selectedIndex];
     }
     
-    BOOL willSendAction = ![self.selectedIndeces isEqualToIndexSet:set];
+    BOOL willSendAction = ![_selectedIndexes isEqualToIndexSet:set];
     
-    [self selectItemsWithIndexSet:set byExpandingSelection:NO];
-    
-    if (willSendAction) {
+    if (willSendAction)
         [self sendActionsForControlEvents:UIControlEventValueChanged];
-    }
     
-    if (self.segmentedControlMode == AKSegmentedControlModeButton) {
-        [self selectItemsWithIndexSet:[NSIndexSet indexSet] byExpandingSelection:NO];
-    }
 }
 
-#pragma mark - Setters
-
-- (NSIndexSet *)selectedIndeces {
-    return [self.mutableIndexSet copy];
-}
+#pragma mark - Setters & Getters
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage
 {
     _backgroundImage = backgroundImage;
-    [self.backgroundImageView setImage:_backgroundImage];
+    [_backgroundImageView setImage:_backgroundImage];
 }
 
 - (void)setButtonsArray:(NSArray *)buttonsArray
 {
     [_buttonsArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.separatorsArray removeAllObjects];
+    [separatorsArray removeAllObjects];
     
     _buttonsArray = buttonsArray;
     
@@ -175,48 +170,81 @@
     [self rebuildSeparators];
 }
 
-- (void)rebuildSeparators {
-    [self.separatorsArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
-    NSUInteger separatorsNumber = [self.buttonsArray count] - 1;
-    
-    [self.buttonsArray enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (idx < separatorsNumber) {
-            UIImageView *separatorImageView = [[UIImageView alloc] initWithImage:self.separatorImage];
-            [self addSubview:separatorImageView];
-            [self.separatorsArray addObject:separatorImageView];
-        }
-    }];
-}
-
 - (void)setSegmentedControlMode:(AKSegmentedControlMode)segmentedControlMode
 {
     _segmentedControlMode = segmentedControlMode;
     [self updateButtons];
 }
 
-- (void)selectItemsWithIndexSet:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection {
-    if (!expandSelection) {
-        [self.mutableIndexSet removeAllIndexes];
-    }
-    [self.mutableIndexSet addIndexes:indexSet];
-    
+- (void)setSelectedIndex:(NSUInteger)index
+{
+    _selectedIndexes = [NSIndexSet indexSetWithIndex:index];
     [self updateButtons];
 }
 
-- (UIImageView *)backgroundImageView {
-    if (_backgroundImageView == nil) {
+- (void)setSelectedIndexes:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection
+{
+    if (_segmentedControlMode != AKSegmentedControlModeMultipleSelectionable)
+        return;
+    
+    if (!expandSelection)
+        _selectedIndexes = [NSIndexSet indexSet];
+    
+    NSMutableIndexSet *mutableIndexSet = [_selectedIndexes mutableCopy];
+    [mutableIndexSet addIndexes:indexSet];
+    
+    [self setSelectedIndexes:mutableIndexSet];
+}
+
+- (void)setSelectedIndexes:(NSIndexSet *)selectedIndexes
+{
+    _selectedIndexes = [selectedIndexes copy];
+    [self updateButtons];
+}
+
+
+#pragma mark - Rearranging
+
+- (void)rebuildSeparators
+{
+    [separatorsArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    NSUInteger separatorsNumber = [_buttonsArray count] - 1;
+    
+    [_buttonsArray enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (idx < separatorsNumber)
+        {
+            UIImageView *separatorImageView = [[UIImageView alloc] initWithImage:_separatorImage];
+            [self addSubview:separatorImageView];
+            [separatorsArray addObject:separatorImageView];
+        }
+    }];
+}
+
+- (UIImageView *)backgroundImageView
+{
+    if (_backgroundImageView == nil)
+    {
         _backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         [_backgroundImageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     }
+    
     return _backgroundImageView;
 }
 
-- (void)updateButtons {
-    [self.buttonsArray makeObjectsPerformSelector:@selector(setSelected:) withObject:nil];
-    [self.selectedIndeces enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-        if (self.segmentedControlMode != AKSegmentedControlModeButton) {
-            UIButton *button = self.buttonsArray[idx];
+- (void)updateButtons
+{
+    if ([_buttonsArray count] == 0)
+        return;
+    
+    [_buttonsArray makeObjectsPerformSelector:@selector(setSelected:) withObject:nil];
+    
+    [_selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        if (_segmentedControlMode != AKSegmentedControlModeButton)
+        {
+            if (idx >= [_buttonsArray count]) return;
+            
+            UIButton *button = _buttonsArray[idx];
             button.selected = YES;
         }
     }];
