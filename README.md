@@ -30,6 +30,7 @@ Next, import the header file wherever you want to use the tab bar controller:
 
 # Alloc and init the segmented control
 AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect]
+[segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
 
 # Setting the delegate
 [segmentedControl setDelegate:self];
@@ -94,22 +95,7 @@ UIImage *buttonSettingsImageNormal = [UIImage imageNamed:@"settings-icon.png"];
 # Adding your control to the view
 [viewController.view addSubview:segmentedControl];
 ```
-
 Check the example project for further details.
-
-###Delegate Protocol
-
-Tell your class to implement the `AKSegmentedControlDelegate` protocol. For instance :
-
-``` objc
-@interface AKAppDelegate : UIResponder <UIApplicationDelegate, AKSegmentedControlDelegate>
-```
-
-Then implemented the optional protocol method in your implementation class to receive the segmented control inputs:
-
-``` objc
-- (void)segmentedViewController:(AKSegmentedControl *)segmentedControl touchedAtIndex:(NSUInteger)index;
-```
 
 ##Requirements
 - iOS >= 4.3
