@@ -95,6 +95,12 @@ UIImage *buttonSettingsImageNormal = [UIImage imageNamed:@"settings-icon.png"];
 # Adding your control to the view
 [viewController.view addSubview:segmentedControl];
 ```
+This segmented control is a subclass of UIControl and you just need to add a target if you want to trigger a method:
+```objc
+# Adding a target
+[segmentedControl addTarget:self action:@selector(segmentedControlTouched:) forControlEvents:UIControlEventValueChanged];
+```
+
 Check the example project for further details.
 
 ##Requirements
