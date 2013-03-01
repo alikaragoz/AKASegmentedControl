@@ -43,6 +43,23 @@
     self = [super initWithFrame:frame];
     if (!self) return nil;
     
+    [self prepareView];
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (!self) return nil;
+    
+    [self prepareView];
+    
+    return self;
+}
+
+- (void)prepareView
+{
     separatorsArray = [NSMutableArray array];
     self.selectedIndexes = [NSIndexSet indexSet];
     self.contentEdgeInsets = UIEdgeInsetsZero;
@@ -50,8 +67,6 @@
     self.buttonsArray = [[NSArray alloc] init];
     
     [self addSubview:self.backgroundImageView];
-    
-    return self;
 }
 
 #pragma mark - Layout
