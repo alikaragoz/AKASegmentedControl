@@ -132,7 +132,7 @@
         [self setSelectedIndex:selectedIndex];
     }
     
-    BOOL willSendAction = ![_selectedIndexes isEqualToIndexSet:set];
+    BOOL willSendAction = (![_selectedIndexes isEqualToIndexSet:set] || _segmentedControlMode == AKSegmentedControlModeButton);
     
     if (willSendAction)
         [self sendActionsForControlEvents:UIControlEventValueChanged];
