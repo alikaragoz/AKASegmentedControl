@@ -32,9 +32,6 @@ Next, import the header file wherever you want to use the tab bar controller:
 AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect]
 [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
 
-# Setting the delegate
-[segmentedControl setDelegate:self];
-
 # Setting the resizable background image
 UIImage *backgroundImage = [[UIImage imageNamed:@"segmented-bg.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)];
 [segmentedControl setBackgroundImage:backgroundImage];
