@@ -28,21 +28,21 @@ Next, import the header file wherever you want to use the tab bar controller:
 ### Usage
 ```objc
 
-# Alloc and init the segmented control
+// Initialization of the segmented control
 AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect]
 [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
 
-# Setting the resizable background image
+// Setting the resizable background image
 UIImage *backgroundImage = [[UIImage imageNamed:@"segmented-bg.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)];
 [segmentedControl setBackgroundImage:backgroundImage];
 
-# Setting the content edge insets to adapte to you design
+// Setting the content edge insets to adapte to you design
 [segmentedControl setContentEdgeInsets:UIEdgeInsetsMake(2.0, 2.0, 3.0, 2.0)];
 
-# Setting the behavior mode of the control
+// Setting the behavior mode of the control
 [segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
 
-# Setting the separator image
+// Setting the separator image
 [segmentedControl setSeparatorImage:[UIImage imageNamed:@"segmented-separator.png"]];
 
 UIImage *buttonBackgroundImagePressedLeft = [[UIImage imageNamed:@"segmented-bg-pressed-left.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.0, 4.0, 0.0, 1.0)];
@@ -86,15 +86,15 @@ UIImage *buttonSettingsImageNormal = [UIImage imageNamed:@"settings-icon.png"];
 [buttonSettings setImage:buttonSettingsImageNormal forState:UIControlStateHighlighted];
 [buttonSettings setImage:buttonSettingsImageNormal forState:(UIControlStateHighlighted|UIControlStateSelected)];
     
-# Setting the UIButtons used in the segmented control
+// Setting the UIButtons used in the segmented control
 [segmentedControl setButtonsArray:@[buttonSocial, buttonStar, buttonSettings]];
 
-# Adding your control to the view
+// Adding your control to the view
 [viewController.view addSubview:segmentedControl];
 ```
 This segmented control is a subclass of UIControl and you just need to add a target if you want to trigger a method:
 ```objc
-# Adding a target
+// Adding a target
 [segmentedControl addTarget:self action:@selector(segmentedControlTouched:) forControlEvents:UIControlEventValueChanged];
 ```
 
