@@ -220,6 +220,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
     
     NSUInteger separatorsNumber = [_buttonsArray count] - 1;
     
+    [separatorsArray removeAllObjects];
     [_buttonsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if (idx < separatorsNumber) {
             UIImageView *separatorImageView = [[UIImageView alloc] initWithImage:_separatorImage];
