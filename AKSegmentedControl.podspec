@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name     = 'AKSegmentedControl'
-  s.version  = '1.0.2'
+  s.version  = '1.0.3'
   s.author   = { 'Ali Karagoz' => 'mail@alikaragoz.net' }
   s.homepage = 'https://github.com/alikaragoz/AKSegmentedControl'
   s.summary  = 'AKSegmentedControl is a fully customizable Segmented Control for iOS.'
-  s.source   = { :git => 'https://github.com/alikaragoz/AKSegmentedControl.git', :tag => '1.0.2' }
+  s.source   = { :git => 'https://github.com/alikaragoz/AKSegmentedControl.git', :tag => '1.0.3' }
   s.license  = 'MIT'
   
   s.platform = :ios
