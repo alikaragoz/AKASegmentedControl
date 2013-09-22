@@ -23,26 +23,25 @@
 
 #import <UIKit/UIKit.h>
 
-@class AKSegmentedControl;
-
-typedef enum : NSUInteger
-{
+typedef NS_ENUM(NSUInteger, AKSegmentedControlMode) {
     AKSegmentedControlModeSticky,
     AKSegmentedControlModeButton,
     AKSegmentedControlModeMultipleSelectionable,
-} AKSegmentedControlMode;
-
+};
 
 @interface AKSegmentedControl : UIControl
 
-@property (nonatomic, strong) NSArray *buttonsArray;
-@property (nonatomic, strong) UIImage *backgroundImage;
-@property (nonatomic, strong) UIImage *separatorImage;
-@property (nonatomic, strong) NSIndexSet *selectedIndexes;
+@property (nonatomic) NSArray *buttonsArray;
+@property (nonatomic) UIImage *backgroundImage;
+@property (nonatomic) UIImage *separatorImage;
+@property (nonatomic) NSIndexSet *selectedIndexes;
 @property (nonatomic, assign) UIEdgeInsets contentEdgeInsets;
 @property (nonatomic, assign) AKSegmentedControlMode segmentedControlMode;
 
+// Manually set the selected index
 - (void)setSelectedIndex:(NSUInteger)index;
+
+// Manually set the selected indexes when using `AKSegmentedControlModeMultipleSelectionable` mode
 - (void)setSelectedIndexes:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection;
 
 @end
