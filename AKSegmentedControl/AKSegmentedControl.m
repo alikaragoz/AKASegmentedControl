@@ -166,7 +166,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
     _buttonsArray = buttonsArray;
     
     [_buttonsArray enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-         [self addSubview:(UIButton *)obj];
+        [self addSubview:(UIButton *)obj];
         [(UIButton *)obj addTarget:self action:@selector(segmentButtonPressed:) forControlEvents:UIControlEventTouchDown];
         [(UIButton *)obj setTag:idx];
     }];
@@ -191,7 +191,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
 }
 
 - (void)setSelectedIndexes:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection {
-
+    
     if (_segmentedControlMode != AKSegmentedControlModeMultipleSelectionable) {
         return;
     }
@@ -218,8 +218,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
     
     NSUInteger separatorsNumber = [_buttonsArray count] - 1;
     
-    [_buttonsArray enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-
+    [_buttonsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if (idx < separatorsNumber) {
             UIImageView *separatorImageView = [[UIImageView alloc] initWithImage:_separatorImage];
             [self addSubview:separatorImageView];
