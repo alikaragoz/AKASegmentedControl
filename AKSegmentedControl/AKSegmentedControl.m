@@ -111,6 +111,8 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
         increment++;
         offsetX = CGRectGetMaxX(button.frame);
     }
+    
+    [_backgroundImageView setFrame:self.bounds];
 }
 
 #pragma mark - Button Actions
