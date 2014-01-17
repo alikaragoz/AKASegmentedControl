@@ -23,25 +23,52 @@
 
 #import <UIKit/UIKit.h>
 
+/** Behavior of when touching the each buttons. */
 typedef NS_ENUM(NSUInteger, AKSegmentedControlMode) {
+    /** Upon touching the buttons, they will remain selected. */
     AKSegmentedControlModeSticky,
+    
+    /** Button like mode. Upon touching the buttons, they will transition from selected to normal mode. */
     AKSegmentedControlModeButton,
+    
+    /** Multi selectionable. It is possible to select multiple buttons at once. */
     AKSegmentedControlModeMultipleSelectionable,
 };
 
 @interface AKSegmentedControl : UIControl
 
-@property (nonatomic) NSArray *buttonsArray;
-@property (nonatomic) UIImage *backgroundImage;
-@property (nonatomic) UIImage *separatorImage;
-@property (nonatomic) NSIndexSet *selectedIndexes;
-@property (nonatomic, assign) UIEdgeInsets contentEdgeInsets;
-@property (nonatomic, assign) AKSegmentedControlMode segmentedControlMode;
+/** Array containing pointers to the `UIButton` of the segmented control. */
+@property (nonatomic, strong, readwrite) NSArray *buttonsArray;
 
-// Manually set the selected index
+/** Image used to cover the background of the whole segmented control. */
+@property (nonatomic, strong, readwrite) UIImage *backgroundImage;
+
+/** Image used to represent the vertical separator between each button of the segmented control. */
+@property (nonatomic, strong, readwrite) UIImage *separatorImage;
+
+/** list of indexed currently selected. */
+@property (nonatomic, strong, readwrite) NSIndexSet *selectedIndexes;
+
+/** Insets of the whole segmented control view. */
+@property (nonatomic, assign, readwrite) UIEdgeInsets contentEdgeInsets;
+
+/** Button behavior used upon the user touch.  */
+@property (nonatomic, assign, readwrite) AKSegmentedControlMode segmentedControlMode;
+
+
+/**
+ *  Manually selects an index of the segmented control.
+ *
+ *  @param index Index of the button you want to be selected.
+ */
 - (void)setSelectedIndex:(NSUInteger)index;
 
-// Manually set the selected indexes when using `AKSegmentedControlModeMultipleSelectionable` mode
+/**
+ *  Manually sets the selected indexes when using the `AKSegmentedControlModeMultipleSelectionable` mode.
+ *
+ *  @param indexSet        Set of the indexes you want to be selected.
+ *  @param expandSelection When set this keeps previously selected indexes.
+ */
 - (void)setSelectedIndexes:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection;
 
 @end
