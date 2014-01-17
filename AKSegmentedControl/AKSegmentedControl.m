@@ -23,18 +23,20 @@
 
 #import "AKSegmentedControl.h"
 
-// Default separator width
-const CGFloat kAKButtonSeparatorWidth = 1.0;
+// Default separator width.
+static CGFloat const kAKButtonSeparatorWidth = 1.0;
 
 @interface AKSegmentedControl ()
 
-@property (nonatomic) UIImageView *backgroundImageView;
+@property (nonatomic, strong) NSMutableArray *separatorsArray;
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+
+// Init
+- (void)commonInitializer;
 
 @end
 
-@implementation AKSegmentedControl {
-    NSMutableArray *separatorsArray;
-}
+@implementation AKSegmentedControl
 
 #pragma mark - Init and Dealloc
 
@@ -42,7 +44,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
     self = [super initWithFrame:frame];
     if (!self) return nil;
     
-    [self prepareView];
+    [self commonInitializer];
     
     return self;
 }
@@ -51,13 +53,13 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
     self = [super initWithCoder:aDecoder];
     if (!self) return nil;
     
-    [self prepareView];
+    [self commonInitializer];
     
     return self;
 }
 
-- (void)prepareView {
-    separatorsArray = [NSMutableArray array];
+- (void)commonInitializer {
+    _separatorsArray = [NSMutableArray array];
     self.selectedIndexes = [NSIndexSet indexSet];
     self.contentEdgeInsets = UIEdgeInsetsZero;
     self.segmentedControlMode = AKSegmentedControlModeSticky;
@@ -71,23 +73,24 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
 - (void)layoutSubviews {
     CGRect contentRect = UIEdgeInsetsInsetRect(self.bounds, _contentEdgeInsets);
     
-    NSUInteger buttonsCount = _buttonsArray.count;
+    NSUInteger buttonsCount    = _buttonsArray.count;
     NSUInteger separtorsNumber = buttonsCount - 1;
+    CGFloat separatorWidth     = (_separatorImage != nil) ? _separatorImage.size.width : kAKButtonSeparatorWidth;
+    CGFloat buttonWidth        = floorf((CGRectGetWidth(contentRect) - (separtorsNumber * separatorWidth)) / buttonsCount);
+    CGFloat buttonHeight       = CGRectGetHeight(contentRect);
+    CGSize buttonSize          = CGSizeMake(buttonWidth, buttonHeight);
     
-    CGFloat separatorWidth = (_separatorImage != nil) ? _separatorImage.size.width : kAKButtonSeparatorWidth;
-    CGFloat buttonWidth = floorf((CGRectGetWidth(contentRect) - (separtorsNumber * separatorWidth)) / buttonsCount);
-    CGFloat buttonHeight = CGRectGetHeight(contentRect);
-    CGSize buttonSize = CGSizeMake(buttonWidth, buttonHeight);
+    __block CGFloat offsetX      = CGRectGetMinX(contentRect);
+    __block CGFloat offsetY      = CGRectGetMinY(contentRect);
+    __block CGFloat spaceLeft    = CGRectGetWidth(contentRect) - (buttonsCount * buttonSize.width) - (separtorsNumber * separatorWidth);
+    __block CGFloat dButtonWidth = 0;
+    __block NSUInteger increment = 0;
     
-    CGFloat dButtonWidth = 0;
-    CGFloat spaceLeft = CGRectGetWidth(contentRect) - (buttonsCount * buttonSize.width) - (separtorsNumber * separatorWidth);
-    
-    CGFloat offsetX = CGRectGetMinX(contentRect);
-    CGFloat offsetY = CGRectGetMinY(contentRect);
-    
-    NSUInteger increment = 0;
-    
-    for (UIButton *button in _buttonsArray) {
+    [_buttonsArray enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
+        if (![button isKindOfClass:UIButton.class]) {
+            return;
+        }
+        
         dButtonWidth = buttonSize.width;
         
         if (spaceLeft != 0) {
@@ -95,13 +98,14 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
             spaceLeft--;
         }
         
-        if (increment != 0) offsetX += separatorWidth;
+        if (increment != 0) {
+            offsetX += separatorWidth;
+        }
         
-        [button setFrame:CGRectMake(offsetX, offsetY, dButtonWidth, buttonSize.height)];
+        button.frame = CGRectMake(offsetX, offsetY, dButtonWidth, buttonSize.height);
         
         if (increment < separtorsNumber) {
-            UIImageView *separatorImageView = separatorsArray[increment];
-            
+            UIImageView *separatorImageView = _separatorsArray[increment];
             [separatorImageView setFrame:CGRectMake(CGRectGetMaxX(button.frame),
                                                     offsetY,
                                                     separatorWidth,
@@ -110,7 +114,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
         
         increment++;
         offsetX = CGRectGetMaxX(button.frame);
-    }
+    }];
     
     [_backgroundImageView setFrame:self.bounds];
 }
@@ -120,17 +124,16 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
 - (void)segmentButtonPressed:(id)sender {
     UIButton *button = (UIButton *)sender;
     
-    if (!button || ![button isKindOfClass:[UIButton class]]) {
+    if (![button isKindOfClass:UIButton.class]) {
         return;
     }
     
     NSUInteger selectedIndex = button.tag;
-    
     NSIndexSet *set = _selectedIndexes;
     
     if (_segmentedControlMode == AKSegmentedControlModeMultipleSelectionable) {
+
         NSMutableIndexSet *mutableSet = [set mutableCopy];
-        
         if ([_selectedIndexes containsIndex:selectedIndex]) {
             [mutableSet removeIndex:selectedIndex];
         }
@@ -154,7 +157,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
     
 }
 
-#pragma mark - Setters & Getters
+#pragma mark - Setters
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage {
     _backgroundImage = backgroundImage;
@@ -163,7 +166,7 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
 
 - (void)setButtonsArray:(NSArray *)buttonsArray {
     [_buttonsArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [separatorsArray removeAllObjects];
+    [_separatorsArray removeAllObjects];
     
     _buttonsArray = buttonsArray;
     
@@ -212,26 +215,24 @@ const CGFloat kAKButtonSeparatorWidth = 1.0;
     [self updateButtons];
 }
 
-
 #pragma mark - Rearranging
 
 - (void)rebuildSeparators {
-    [separatorsArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_separatorsArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     NSUInteger separatorsNumber = [_buttonsArray count] - 1;
     
-    [separatorsArray removeAllObjects];
+    [_separatorsArray removeAllObjects];
     [_buttonsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if (idx < separatorsNumber) {
             UIImageView *separatorImageView = [[UIImageView alloc] initWithImage:_separatorImage];
             [self addSubview:separatorImageView];
-            [separatorsArray addObject:separatorImageView];
+            [_separatorsArray addObject:separatorImageView];
         }
     }];
 }
 
-- (UIImageView *)backgroundImageView
-{
+- (UIImageView *)backgroundImageView {
     if (_backgroundImageView == nil) {
         _backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         [_backgroundImageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
