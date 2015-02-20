@@ -71,6 +71,8 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
 #pragma mark - Layout
 
 - (void)layoutSubviews {
+    [super layoutSubviews];
+
     CGRect contentRect = UIEdgeInsetsInsetRect(self.bounds, _contentEdgeInsets);
     
     NSUInteger buttonsCount    = _buttonsArray.count;
