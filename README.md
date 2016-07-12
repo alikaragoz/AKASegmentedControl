@@ -1,9 +1,9 @@
-#AKSegmentedControl
+#AKASegmentedControl
 
-AKSegmentedControl is a fully customizable Segmented Control for iOS
+AKASegmentedControl is a fully customizable Segmented Control for iOS
 
 ##Preview
-![preview](https://github.com/alikaragoz/AKSegmentedControl/raw/master/screenshots/aksegmentedcontrol-screenshot.png)
+![preview](https://github.com/alikaragoz/AKASegmentedControl/raw/master/screenshots/AKASegmentedControl-screenshot.png)
 
 ##Usage
 
@@ -13,23 +13,23 @@ Add the dependency to your `Podfile`:
 ```ruby
 platform :ios
 
-pod 'AKSegmentedControl'
+pod 'AKASegmentedControl'
 ```
 Run `pod install` to install the dependencies.
 
-or copy the two files that are in the AKSegmentedControl folder ([`AKSegmentedControl.h`](https://github.com/alikaragoz/AKSegmentedControl/blob/master/ASegmentedControl/AKSegmentedControl.h) and [`AKSegmentedControl.m`](https://github.com/alikaragoz/AKSegmentedControl/blob/master/ASegmentedControl/AKSegmentedControl.m)).
+or copy the two files that are in the AKASegmentedControl folder ([`AKASegmentedControl.h`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/ASegmentedControl/AKASegmentedControl.h) and [`AKASegmentedControl.m`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/ASegmentedControl/AKASegmentedControl.m)).
 
 Next, import the header file wherever you want to use the tab bar controller:
 
 ```objc
-#import "AKSegmentedControl.h"
+#import "AKASegmentedControl.h"
 ```
 
 ### Usage
 ```objc
 
 // Initialization of the segmented control
-AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect]
+AKASegmentedControl *segmentedControl = [[AKASegmentedControl alloc] initWithFrame:aRect]
 [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
 
 // Setting the resizable background image
@@ -40,7 +40,7 @@ UIImage *backgroundImage = [[UIImage imageNamed:@"segmented-bg.png"] resizableIm
 [segmentedControl setContentEdgeInsets:UIEdgeInsetsMake(2.0, 2.0, 3.0, 2.0)];
 
 // Setting the behavior mode of the control
-[segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
+[segmentedControl setSegmentedControlMode:AKASegmentedControlModeSticky];
 
 // Setting the separator image
 [segmentedControl setSeparatorImage:[UIImage imageNamed:@"segmented-separator.png"]];
@@ -113,4 +113,4 @@ Ali Karagoz
 
 ## License
 
-AKSegmentedControl is available under the MIT license. See the LICENSE file for more info.
+AKASegmentedControl is available under the MIT license. See the LICENSE file for more info.

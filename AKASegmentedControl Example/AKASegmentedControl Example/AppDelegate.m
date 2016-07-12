@@ -1,17 +1,17 @@
 //
 //  AKAppDelegate.m
-//  AKSegmentedControl Example
+//  AKASegmentedControl Example
 //
 //  Created by Ali Karagoz on 24/01/13.
-//  Copyright (c) 2013 Ali Karagoz. All rights reserved.
+//  Copyright (c) 2016 Ali Karagoz. All rights reserved.
 //
 
-#import "AKAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation AKAppDelegate
+@implementation AppDelegate
 {
     UIViewController *viewController;
-    AKSegmentedControl *segmentedControl1, *segmentedControl2, *segmentedControl3;
+    AKASegmentedControl *segmentedControl1, *segmentedControl2, *segmentedControl3;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -33,9 +33,9 @@
     [segmentedControl1Label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0]];
     
     [viewController.view addSubview:segmentedControl1Label];
-    segmentedControl1 = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl1Label.frame) + 10.0, 300.0, 37.0)];
+    segmentedControl1 = [[AKASegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl1Label.frame) + 10.0, 300.0, 37.0)];
     [segmentedControl1 addTarget:self action:@selector(segmentedViewController:) forControlEvents:UIControlEventValueChanged];
-    [segmentedControl1 setSegmentedControlMode:AKSegmentedControlModeSticky];
+    [segmentedControl1 setSegmentedControlMode:AKASegmentedControlModeSticky];
     [segmentedControl1 setSelectedIndex:1];
     
     // Segmented Control #2
@@ -50,9 +50,9 @@
     [segmentedControl2Label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0]];
     
     [viewController.view addSubview:segmentedControl2Label];
-    segmentedControl2 = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl2Label.frame) + 10.0, 300.0, 37.0)];
+    segmentedControl2 = [[AKASegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl2Label.frame) + 10.0, 300.0, 37.0)];
     [segmentedControl2 addTarget:self action:@selector(segmentedViewController:) forControlEvents:UIControlEventValueChanged];
-    [segmentedControl2 setSegmentedControlMode:AKSegmentedControlModeButton];
+    [segmentedControl2 setSegmentedControlMode:AKASegmentedControlModeButton];
     
     // Segmented Control #3
     UILabel *segmentedControl3Label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl2.frame) + 20.0, 300.0, 20.0)];
@@ -66,9 +66,9 @@
     [segmentedControl3Label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0]];
     
     [viewController.view addSubview:segmentedControl3Label];
-    segmentedControl3 = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl3Label.frame) + 10.0, 300.0, 37.0)];
+    segmentedControl3 = [[AKASegmentedControl alloc] initWithFrame:CGRectMake(10.0, CGRectGetMaxY(segmentedControl3Label.frame) + 10.0, 300.0, 37.0)];
     [segmentedControl3 addTarget:self action:@selector(segmentedViewController:) forControlEvents:UIControlEventValueChanged];
-    [segmentedControl3 setSegmentedControlMode:AKSegmentedControlModeMultipleSelectionable];
+    [segmentedControl3 setSegmentedControlMode:AKASegmentedControlModeMultipleSelectionable];
     [segmentedControl3 setSelectedIndexes:[NSIndexSet indexSetWithIndex:0] byExpandingSelection:YES];
     [segmentedControl3 setSelectedIndexes:[NSIndexSet indexSetWithIndex:2] byExpandingSelection:YES];
     
@@ -91,7 +91,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -304,11 +304,11 @@
 }
 
 
-#pragma mark - AKSegmentedControl callbacks
+#pragma mark - AKASegmentedControl callbacks
 
 - (void)segmentedViewController:(id)sender
 {
-    AKSegmentedControl *segmentedControl = (AKSegmentedControl *)sender;
+    AKASegmentedControl *segmentedControl = (AKASegmentedControl *)sender;
     
     if (segmentedControl == segmentedControl1)
         NSLog(@"SegmentedControl #1 : Selected Index %@", [segmentedControl selectedIndexes]);

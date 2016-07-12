@@ -1,7 +1,7 @@
 //
-// AKSegmentedControl.m
+// AKASegmentedControl.m
 //
-// Copyright (c) 2013 Ali Karagoz (http://alikaragoz.net)
+// Copyright (c) 2016 Ali Karagoz (http://alikaragoz.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,12 +21,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AKSegmentedControl.h"
+#import "AKASegmentedControl.h"
 
 // Default separator width.
 static CGFloat const kAKButtonSeparatorWidth = 1.0;
 
-@interface AKSegmentedControl ()
+@interface AKASegmentedControl ()
 
 @property (nonatomic, strong) NSMutableArray *separatorsArray;
 @property (nonatomic, strong) UIImageView *backgroundImageView;
@@ -36,7 +36,7 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
 
 @end
 
-@implementation AKSegmentedControl
+@implementation AKASegmentedControl
 
 #pragma mark - Init and Dealloc
 
@@ -62,7 +62,7 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
     _separatorsArray = [NSMutableArray array];
     self.selectedIndexes = [NSIndexSet indexSet];
     self.contentEdgeInsets = UIEdgeInsetsZero;
-    self.segmentedControlMode = AKSegmentedControlModeSticky;
+    self.segmentedControlMode = AKASegmentedControlModeSticky;
     self.buttonsArray = [[NSArray alloc] init];
     
     [self addSubview:self.backgroundImageView];
@@ -72,7 +72,7 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-
+    
     CGRect contentRect = UIEdgeInsetsInsetRect(self.bounds, _contentEdgeInsets);
     
     NSUInteger buttonsCount    = _buttonsArray.count;
@@ -133,8 +133,8 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
     NSUInteger selectedIndex = button.tag;
     NSIndexSet *set = _selectedIndexes;
     
-    if (_segmentedControlMode == AKSegmentedControlModeMultipleSelectionable) {
-
+    if (_segmentedControlMode == AKASegmentedControlModeMultipleSelectionable) {
+        
         NSMutableIndexSet *mutableSet = [set mutableCopy];
         if ([_selectedIndexes containsIndex:selectedIndex]) {
             [mutableSet removeIndex:selectedIndex];
@@ -151,7 +151,7 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
         [self setSelectedIndex:selectedIndex];
     }
     
-    BOOL willSendAction = (![_selectedIndexes isEqualToIndexSet:set] || _segmentedControlMode == AKSegmentedControlModeButton);
+    BOOL willSendAction = (![_selectedIndexes isEqualToIndexSet:set] || _segmentedControlMode == AKASegmentedControlModeButton);
     
     if (willSendAction) {
         [self sendActionsForControlEvents:UIControlEventValueChanged];
@@ -187,7 +187,7 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
     [self rebuildSeparators];
 }
 
-- (void)setSegmentedControlMode:(AKSegmentedControlMode)segmentedControlMode {
+- (void)setSegmentedControlMode:(AKASegmentedControlMode)segmentedControlMode {
     _segmentedControlMode = segmentedControlMode;
     [self updateButtons];
 }
@@ -199,7 +199,7 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
 
 - (void)setSelectedIndexes:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection {
     
-    if (_segmentedControlMode != AKSegmentedControlModeMultipleSelectionable) {
+    if (_segmentedControlMode != AKASegmentedControlModeMultipleSelectionable) {
         return;
     }
     
@@ -253,7 +253,7 @@ static CGFloat const kAKButtonSeparatorWidth = 1.0;
     
     [_selectedIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
         
-        if (_segmentedControlMode != AKSegmentedControlModeButton) {
+        if (_segmentedControlMode != AKASegmentedControlModeButton) {
             if (idx >= [_buttonsArray count]) return;
             
             UIButton *button = _buttonsArray[idx];

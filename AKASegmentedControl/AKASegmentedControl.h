@@ -1,7 +1,7 @@
 //
-// AKSegmentedControl.h
+// AKASegmentedControl.h
 //
-// Copyright (c) 2013 Ali Karagoz (http://alikaragoz.net)
+// Copyright (c) 2016 Ali Karagoz (http://alikaragoz.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,18 +24,18 @@
 #import <UIKit/UIKit.h>
 
 /** Behavior of when touching the each buttons. */
-typedef NS_ENUM(NSUInteger, AKSegmentedControlMode) {
+typedef NS_ENUM(NSUInteger, AKASegmentedControlMode) {
     /** Upon touching the buttons, they will remain selected. */
-    AKSegmentedControlModeSticky,
+    AKASegmentedControlModeSticky,
     
     /** Button like mode. Upon touching the buttons, they will transition from selected to normal mode. */
-    AKSegmentedControlModeButton,
+    AKASegmentedControlModeButton,
     
     /** Multi selectionable. It is possible to select multiple buttons at once. */
-    AKSegmentedControlModeMultipleSelectionable,
+    AKASegmentedControlModeMultipleSelectionable,
 };
 
-@interface AKSegmentedControl : UIControl
+@interface AKASegmentedControl : UIControl
 
 /** Array containing pointers to the `UIButton` of the segmented control. */
 @property (nonatomic, strong, readwrite) NSArray *buttonsArray;
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, AKSegmentedControlMode) {
 @property (nonatomic, assign, readwrite) UIEdgeInsets contentEdgeInsets;
 
 /** Button behavior used upon the user touch.  */
-@property (nonatomic, assign, readwrite) AKSegmentedControlMode segmentedControlMode;
+@property (nonatomic, assign, readwrite) AKASegmentedControlMode segmentedControlMode;
 
 
 /**
@@ -64,7 +64,7 @@ typedef NS_ENUM(NSUInteger, AKSegmentedControlMode) {
 - (void)setSelectedIndex:(NSUInteger)index;
 
 /**
- *  Manually sets the selected indexes when using the `AKSegmentedControlModeMultipleSelectionable` mode.
+ *  Manually sets the selected indexes when using the `AKASegmentedControlModeMultipleSelectionable` mode.
  *
  *  @param indexSet        Set of the indexes you want to be selected.
  *  @param expandSelection When set this keeps previously selected indexes.
