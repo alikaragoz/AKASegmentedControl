@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'AKSegmentedControl Example' target in the 'AKSegmentedControl Example' project
+// Prefix header for all source files of the 'AKASegmentedControl Example' target in the 'AKASegmentedControl Example' project
 //
 
 #import <Availability.h>

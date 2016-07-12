@@ -12,11 +12,11 @@
 		7BF65CAE16B1EE6C009E2021 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF65CAD16B1EE6C009E2021 /* CoreGraphics.framework */; };
 		7BF65CB416B1EE6C009E2021 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CB216B1EE6C009E2021 /* InfoPlist.strings */; };
 		7BF65CB616B1EE6C009E2021 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CB516B1EE6C009E2021 /* main.m */; };
-		7BF65CBA16B1EE6C009E2021 /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CB916B1EE6C009E2021 /* AKAppDelegate.m */; };
+		7BF65CBA16B1EE6C009E2021 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CB916B1EE6C009E2021 /* AppDelegate.m */; };
 		7BF65CBC16B1EE6C009E2021 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CBB16B1EE6C009E2021 /* Default.png */; };
 		7BF65CBE16B1EE6C009E2021 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CBD16B1EE6C009E2021 /* Default@2x.png */; };
 		7BF65CC016B1EE6C009E2021 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CBF16B1EE6C009E2021 /* Default-568h@2x.png */; };
-		7BF65CCA16B1EECF009E2021 /* AKSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CC916B1EECF009E2021 /* AKSegmentedControl.m */; };
+		7BF65CCA16B1EECF009E2021 /* AKASegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF65CC916B1EECF009E2021 /* AKASegmentedControl.m */; };
 		7BF65CDD16B1EF13009E2021 /* segmented-bg-pressed-center.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CCD16B1EF13009E2021 /* segmented-bg-pressed-center.png */; };
 		7BF65CDE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CCE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png */; };
 		7BF65CDF16B1EF13009E2021 /* segmented-bg-pressed-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF65CCF16B1EF13009E2021 /* segmented-bg-pressed-left.png */; };
@@ -36,21 +36,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7BF65CA516B1EE6C009E2021 /* AKSegmentedControl Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AKSegmentedControl Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF65CA516B1EE6C009E2021 /* AKASegmentedControl Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AKASegmentedControl Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF65CA916B1EE6C009E2021 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BF65CAB16B1EE6C009E2021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BF65CAD16B1EE6C009E2021 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7BF65CB116B1EE6C009E2021 /* AKSegmentedControl Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKSegmentedControl Example-Info.plist"; sourceTree = "<group>"; };
+		7BF65CB116B1EE6C009E2021 /* AKASegmentedControl Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKASegmentedControl Example-Info.plist"; sourceTree = "<group>"; };
 		7BF65CB316B1EE6C009E2021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7BF65CB516B1EE6C009E2021 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7BF65CB716B1EE6C009E2021 /* AKSegmentedControl Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKSegmentedControl Example-Prefix.pch"; sourceTree = "<group>"; };
-		7BF65CB816B1EE6C009E2021 /* AKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
-		7BF65CB916B1EE6C009E2021 /* AKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
+		7BF65CB716B1EE6C009E2021 /* AKASegmentedControl Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKASegmentedControl Example-Prefix.pch"; sourceTree = "<group>"; };
+		7BF65CB816B1EE6C009E2021 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7BF65CB916B1EE6C009E2021 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7BF65CBB16B1EE6C009E2021 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		7BF65CBD16B1EE6C009E2021 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7BF65CBF16B1EE6C009E2021 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		7BF65CC816B1EECF009E2021 /* AKSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKSegmentedControl.h; sourceTree = "<group>"; };
-		7BF65CC916B1EECF009E2021 /* AKSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKSegmentedControl.m; sourceTree = "<group>"; };
+		7BF65CC816B1EECF009E2021 /* AKASegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKASegmentedControl.h; sourceTree = "<group>"; };
+		7BF65CC916B1EECF009E2021 /* AKASegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKASegmentedControl.m; sourceTree = "<group>"; };
 		7BF65CCD16B1EF13009E2021 /* segmented-bg-pressed-center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-center.png"; sourceTree = "<group>"; };
 		7BF65CCE16B1EF13009E2021 /* segmented-bg-pressed-center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-center@2x.png"; sourceTree = "<group>"; };
 		7BF65CCF16B1EF13009E2021 /* segmented-bg-pressed-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-left.png"; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		7BF65C9A16B1EE6C009E2021 = {
 			isa = PBXGroup;
 			children = (
-				7BF65CAF16B1EE6C009E2021 /* AKSegmentedControl Example */,
+				7BF65CAF16B1EE6C009E2021 /* AKASegmentedControl Example */,
 				7BF65CA816B1EE6C009E2021 /* Frameworks */,
 				7BF65CA616B1EE6C009E2021 /* Products */,
 			);
@@ -95,7 +95,7 @@
 		7BF65CA616B1EE6C009E2021 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7BF65CA516B1EE6C009E2021 /* AKSegmentedControl Example.app */,
+				7BF65CA516B1EE6C009E2021 /* AKASegmentedControl Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,25 +110,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7BF65CAF16B1EE6C009E2021 /* AKSegmentedControl Example */ = {
+		7BF65CAF16B1EE6C009E2021 /* AKASegmentedControl Example */ = {
 			isa = PBXGroup;
 			children = (
-				7BF65CB816B1EE6C009E2021 /* AKAppDelegate.h */,
-				7BF65CB916B1EE6C009E2021 /* AKAppDelegate.m */,
+				7BF65CB816B1EE6C009E2021 /* AppDelegate.h */,
+				7BF65CB916B1EE6C009E2021 /* AppDelegate.m */,
 				7BF65CC616B1EEC3009E2021 /* Vendor */,
 				7BF65CCB16B1EF02009E2021 /* Resources */,
 				7BF65CB016B1EE6C009E2021 /* Supporting Files */,
 			);
-			path = "AKSegmentedControl Example";
+			path = "AKASegmentedControl Example";
 			sourceTree = "<group>";
 		};
 		7BF65CB016B1EE6C009E2021 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7BF65CB116B1EE6C009E2021 /* AKSegmentedControl Example-Info.plist */,
+				7BF65CB116B1EE6C009E2021 /* AKASegmentedControl Example-Info.plist */,
 				7BF65CB216B1EE6C009E2021 /* InfoPlist.strings */,
 				7BF65CB516B1EE6C009E2021 /* main.m */,
-				7BF65CB716B1EE6C009E2021 /* AKSegmentedControl Example-Prefix.pch */,
+				7BF65CB716B1EE6C009E2021 /* AKASegmentedControl Example-Prefix.pch */,
 				7BF65CBB16B1EE6C009E2021 /* Default.png */,
 				7BF65CBD16B1EE6C009E2021 /* Default@2x.png */,
 				7BF65CBF16B1EE6C009E2021 /* Default-568h@2x.png */,
@@ -139,19 +139,19 @@
 		7BF65CC616B1EEC3009E2021 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				7BF65CC716B1EECF009E2021 /* AKSegmentedControl */,
+				7BF65CC716B1EECF009E2021 /* AKASegmentedControl */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
 		};
-		7BF65CC716B1EECF009E2021 /* AKSegmentedControl */ = {
+		7BF65CC716B1EECF009E2021 /* AKASegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				7BF65CC816B1EECF009E2021 /* AKSegmentedControl.h */,
-				7BF65CC916B1EECF009E2021 /* AKSegmentedControl.m */,
+				7BF65CC816B1EECF009E2021 /* AKASegmentedControl.h */,
+				7BF65CC916B1EECF009E2021 /* AKASegmentedControl.m */,
 			);
-			name = AKSegmentedControl;
-			path = ../../AKSegmentedControl;
+			name = AKASegmentedControl;
+			path = ../../AKASegmentedControl;
 			sourceTree = "<group>";
 		};
 		7BF65CCB16B1EF02009E2021 /* Resources */ = {
@@ -188,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7BF65CA416B1EE6C009E2021 /* AKSegmentedControl Example */ = {
+		7BF65CA416B1EE6C009E2021 /* AKASegmentedControl Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7BF65CC316B1EE6C009E2021 /* Build configuration list for PBXNativeTarget "AKSegmentedControl Example" */;
+			buildConfigurationList = 7BF65CC316B1EE6C009E2021 /* Build configuration list for PBXNativeTarget "AKASegmentedControl Example" */;
 			buildPhases = (
 				7BF65CA116B1EE6C009E2021 /* Sources */,
 				7BF65CA216B1EE6C009E2021 /* Frameworks */,
@@ -200,9 +200,9 @@
 			);
 			dependencies = (
 			);
-			name = "AKSegmentedControl Example";
-			productName = "AKSegmentedControl Example";
-			productReference = 7BF65CA516B1EE6C009E2021 /* AKSegmentedControl Example.app */;
+			name = "AKASegmentedControl Example";
+			productName = "AKASegmentedControl Example";
+			productReference = 7BF65CA516B1EE6C009E2021 /* AKASegmentedControl Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +215,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Ali Karagoz";
 			};
-			buildConfigurationList = 7BF65C9F16B1EE6C009E2021 /* Build configuration list for PBXProject "AKSegmentedControl Example" */;
+			buildConfigurationList = 7BF65C9F16B1EE6C009E2021 /* Build configuration list for PBXProject "AKASegmentedControl Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -227,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7BF65CA416B1EE6C009E2021 /* AKSegmentedControl Example */,
+				7BF65CA416B1EE6C009E2021 /* AKASegmentedControl Example */,
 			);
 		};
 /* End PBXProject section */
@@ -268,8 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF65CB616B1EE6C009E2021 /* main.m in Sources */,
-				7BF65CBA16B1EE6C009E2021 /* AKAppDelegate.m in Sources */,
-				7BF65CCA16B1EECF009E2021 /* AKSegmentedControl.m in Sources */,
+				7BF65CBA16B1EE6C009E2021 /* AppDelegate.m in Sources */,
+				7BF65CCA16B1EECF009E2021 /* AKASegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +343,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AKSegmentedControl Example/AKSegmentedControl Example-Prefix.pch";
-				INFOPLIST_FILE = "AKSegmentedControl Example/AKSegmentedControl Example-Info.plist";
+				GCC_PREFIX_HEADER = "AKASegmentedControl Example/AKASegmentedControl Example-Prefix.pch";
+				INFOPLIST_FILE = "AKASegmentedControl Example/AKASegmentedControl Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -355,8 +355,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AKSegmentedControl Example/AKSegmentedControl Example-Prefix.pch";
-				INFOPLIST_FILE = "AKSegmentedControl Example/AKSegmentedControl Example-Info.plist";
+				GCC_PREFIX_HEADER = "AKASegmentedControl Example/AKASegmentedControl Example-Prefix.pch";
+				INFOPLIST_FILE = "AKASegmentedControl Example/AKASegmentedControl Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -366,7 +366,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7BF65C9F16B1EE6C009E2021 /* Build configuration list for PBXProject "AKSegmentedControl Example" */ = {
+		7BF65C9F16B1EE6C009E2021 /* Build configuration list for PBXProject "AKASegmentedControl Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7BF65CC116B1EE6C009E2021 /* Debug */,
@@ -375,7 +375,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7BF65CC316B1EE6C009E2021 /* Build configuration list for PBXNativeTarget "AKSegmentedControl Example" */ = {
+		7BF65CC316B1EE6C009E2021 /* Build configuration list for PBXNativeTarget "AKASegmentedControl Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7BF65CC416B1EE6C009E2021 /* Debug */,
