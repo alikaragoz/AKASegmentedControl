@@ -3,7 +3,7 @@
 AKASegmentedControl is a fully customizable Segmented Control for iOS
 
 ##Preview
-![preview](https://github.com/alikaragoz/AKASegmentedControl/raw/master/screenshots/AKASegmentedControl-screenshot.png)
+![preview](https://github.com/alikaragoz/AKASegmentedControl/raw/master/screenshots/akasegmentedcontrol-screenshot.png)
 
 ##Usage
 
