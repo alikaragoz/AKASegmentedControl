@@ -17,7 +17,7 @@ pod 'AKASegmentedControl'
 ```
 Run `pod install` to install the dependencies.
 
-or copy the two files that are in the AKASegmentedControl folder ([`AKASegmentedControl.h`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/ASegmentedControl/AKASegmentedControl.h) and [`AKASegmentedControl.m`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/ASegmentedControl/AKASegmentedControl.m)).
+or copy the two files that are in the AKASegmentedControl folder ([`AKASegmentedControl.h`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/AKASegmentedControl/AKASegmentedControl.h) and [`AKASegmentedControl.m`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/AKASegmentedControl/AKASegmentedControl.m)).
 
 Next, import the header file wherever you want to use the tab bar controller:
 
