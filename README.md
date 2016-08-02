@@ -7,23 +7,25 @@ AKASegmentedControl is a fully customizable Segmented Control for iOS
 
 ##Usage
 
-###Installation
-Add the dependency to your `Podfile`:
+## Installation
+
+#### CocoaPods
+You can use [CocoaPods](http://cocoapods.org/) to install `AKASegmentedControl` by adding it to your `Podfile`:
 
 ```ruby
-platform :ios
-
+platform :ios, '8.0'
+use_frameworks!
 pod 'AKASegmentedControl'
 ```
-Run `pod install` to install the dependencies.
 
-or copy the two files that are in the AKASegmentedControl folder ([`AKASegmentedControl.h`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/AKASegmentedControl/AKASegmentedControl.h) and [`AKASegmentedControl.m`](https://github.com/alikaragoz/AKASegmentedControl/blob/master/AKASegmentedControl/AKASegmentedControl.m)).
+To get the full benefits import `AKASegmentedControl.h` wherever you import UIKit
 
-Next, import the header file wherever you want to use the tab bar controller:
-
-```objc
+``` swift
 #import "AKASegmentedControl.h"
 ```
+#### Manually
+1. Download and drop ```/AKASegmentedControl``` folder in your project.  
+2. Congratulations!  
 
 ### Usage
 ```objc
